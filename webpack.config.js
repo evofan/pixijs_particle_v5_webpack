@@ -4,13 +4,24 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
+  // When the mode is set to "production", the JS file is output in an optimized state
+  // When the mode is set to "development", the source map is valid and the JS file is output
+  mode: "production",
+  // or
+  // mode: "development",
+
+  // Launch local development environment, browser automatically opens localhost at runtime
+  devServer: {
+    contentBase: "dist",
+    open: true
+  },
 
   entry: "./src/index.ts",
 
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      // title: "Pixi.js Demo",
+      title: "Pixi.js Demo", // If there is template.html, that title takes precedence
       template: "./src/html/index.html"
     }),
     new CopyPlugin([{ from: "src/assets", to: "assets" }])
@@ -26,19 +37,18 @@ module.exports = {
   },
 
   devServer: {
-    // webpack-dev-serverの公開フォルダ
+    // public folder of webpack-dev-server
     contentBase: path.join(__dirname, "dist")
   },
 
-  // モジュールに適用するルールの設定（ここではローダーの設定を行う事が多い）
+  // Set rules to be applied to the module (here we often set the loader)
   module: {
     rules: [
       {
-        // 拡張子が.tsで終わるファイルに対して、TypeScriptコンパイラを適用する
+        // Apply TypeScript compiler to files ending in .ts
         test: /\.ts$/,
         loader: "ts-loader"
       }
     ]
   }
-  
 };

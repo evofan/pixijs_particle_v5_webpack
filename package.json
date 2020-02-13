@@ -1,36 +1,32 @@
 {
-  "name": "pixi_spine_viewer",
+  "name": "pixijs_particle_v5_webpack-master",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Testing particles with Pixijs and webpack.",
+  "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack --mode=development",
-    "start": "webpack-dev-server --mode=development"
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "watch": "webpack --watch"
+  },
+  "dependencies": {
+    "pixi.js": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.0.5",
-    "html-webpack-plugin": "^3.2.0",
-    "pixi-spine": "^2.1.6",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.7.3",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
-  },
-  "dependencies": {
-    "pixi.js": "^5.2.0",
-    "serialize-javascript": "^2.1.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/evofan/SpineViewer.git"
-  },
-  "bugs": {
-    "url": "https://github.com/evofan/SpineViewer/issues"
-  },
-  "homepage": "https://github.com/evofan/SpineViewer#readme",
-  "description": ""
+  "license": "ISC"
 }
