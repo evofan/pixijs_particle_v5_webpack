@@ -2,8 +2,8 @@
 
 ![https://raw.githubusercontent.com/evofan/pixijs_particle_v5_webpack/master/pic_screenshot_spark.jpg](https://raw.githubusercontent.com/evofan/pixijs_particle_v5_webpack/master/pic_screenshot_spark.jpg "image")  
 
-**DEMO** 
-[https://evofan.github.io/pixijs_particle_agd/](https://evofan.github.io/pixijs_particle_agd/)  
+**DEMO**  
+[https://evofan.github.io/pixijs_particle_v5_webpack/dist/](https://evofan.github.io/pixijs_particle_v5_webpack/dist/)  
 
 reference  
 
