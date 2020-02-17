@@ -3,8 +3,14 @@ import { loader } from "webpack";
 window.PIXI = PIXI;
 import { STAGES, ASSETS, GAMES } from "./constants";
 import { setText } from "./setText";
+import Stats from "stats.js";
 
 console.log(PIXI);
+
+// stats
+let stats: Stats = new Stats();
+stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+document.body.appendChild(stats.dom);
 
 // constant
 const WIDTH: number = STAGES.WIDTH;
@@ -34,11 +40,13 @@ let animate = () => {
   deltaTime < 0 ? (deltaTime = 0) : deltaTime;
   deltaTime > ms ? (deltaTime = ms) : deltaTime;
   renderer.render(stage);
+  stats.begin();
   requestAnimationFrame(animate);
   updateParticle();
   if (particlesEmitflag) {
     particleStream();
   }
+  stats.end();
 };
 
 // loader
