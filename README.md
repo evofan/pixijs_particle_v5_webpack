@@ -1,7 +1,5 @@
 # Testing particles with Pixijs and webpack.  
 
-TODO: Add Stats  
-
 ![https://raw.githubusercontent.com/evofan/pixijs_particle_v5_webpack/master/pic_screenshot_spark.jpg](https://raw.githubusercontent.com/evofan/pixijs_particle_v5_webpack/master/pic_screenshot_spark.jpg "image")  
 
 **DEMO**  
