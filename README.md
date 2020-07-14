@@ -23,3 +23,8 @@ Customize "Chapter 8 Particle Effect" so that it can be used with pixijs.
 TypeScript re-introduction-JavaScript is a "soft" statically typed language with "TypeScript that doesn't work hard"  
 [https://employment.en-japan.com/engineerhub/entry/2019/04/16/103000](https://employment.en-japan.com/engineerhub/entry/2019/04/16/103000)  
 >Recommended settings of tsconfig.json  
+
+**警告対処**  
+> ncu  
+> ncu -u  
+> npm install  
