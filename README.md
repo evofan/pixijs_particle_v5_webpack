@@ -28,3 +28,5 @@ TypeScript re-introduction-JavaScript is a "soft" statically typed language with
 > ncu  
 > ncu -u  
 > npm install  
+errorが出た場合は  
+> npm i -f
