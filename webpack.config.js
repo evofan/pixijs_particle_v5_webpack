@@ -6,9 +6,9 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
   // When the mode is set to "production", the JS file is output in an optimized state
   // When the mode is set to "development", the source map is valid and the JS file is output
-  mode: "production",
+  // mode: "production",
   // or
-  // mode: "development",
+  mode: "development",
 
   // Launch local development environment, browser automatically opens localhost at runtime
   devServer: {
@@ -24,7 +24,13 @@ module.exports = {
       title: "Pixi.js Demo", // If there is template.html, that title takes precedence
       template: "./src/html/index.html"
     }),
-    new CopyPlugin([{ from: "src/assets", to: "assets" }])
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "src/assets", to: "assets"
+        }
+      ]
+    })
   ],
 
   output: {
