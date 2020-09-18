@@ -126,7 +126,7 @@ loader.load((loader: PIXI.Loader, resources: any) => {
   let offset: number = 10;
 
   // text version
-  let version: string = "PixiJS: 5.2.1\nwebpack: 4.42.0\nTypeScript: 3.7.5";
+  let version: string = "PixiJS: 5.3.3\nwebpack: 4.44.0\nTypeScript: 4.0.2";
   text_libVersion = setText(version, "Arial", 16, 0xf0fff0, "left", "normal");
   container.addChild(text_libVersion);
   text_libVersion.x = offset;
