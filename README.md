@@ -5,6 +5,12 @@
 **DEMO**  
 [https://evofan.github.io/pixijs_particle_v5_webpack/dist/](https://evofan.github.io/pixijs_particle_v5_webpack/dist/)  
 
+**USAGE**  
+npm install  
+npm run build  
+npm run start  
+http://localhost:8080/
+
 reference  
 
 **Advanced Game Design with HTML5 and JavaScript**  
