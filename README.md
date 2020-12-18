@@ -1,6 +1,6 @@
 # Testing particles with Pixijs and webpack.  
 
-![https://raw.githubusercontent.com/evofan/pixijs_particle_v5_webpack/master/pic_screenshot_spark.jpg](https://raw.githubusercontent.com/evofan/pixijs_particle_v5_webpack/master/pic_screenshot_spark.jpg "image")  
+<img src="https://evofan.github.io/pixijs_particle_v5_webpack/pic_screenshot_spark.jpg" width="50%">  
 
 **DEMO**  
 [https://evofan.github.io/pixijs_particle_v5_webpack/dist/](https://evofan.github.io/pixijs_particle_v5_webpack/dist/)  
