@@ -53,8 +53,14 @@ module.exports = {
       {
         // Apply TypeScript compiler to files ending in .ts
         test: /\.ts$/,
-        loader: "ts-loader"
-      }
+        loader: "ts-loader",
+      },
+      {
+        // Turn off SourceMap warnings.
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
+      },
     ]
   }
 };

@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
-import { loader } from "webpack";
+// webpack v5 error. import { loader } from "webpack";
+import { WebpackPluginInstance as loader } from "webpack";
 window.PIXI = PIXI;
 import { STAGES, ASSETS, GAMES } from "./constants";
 import { setText } from "./setText";
@@ -21,7 +22,7 @@ const BG_COLOR: number = STAGES.BG_COLOR;
 const renderer: PIXI.Renderer = new PIXI.Renderer({
   width: WIDTH,
   height: HEIGHT,
-  backgroundColor: BG_COLOR
+  backgroundColor: BG_COLOR,
 });
 document.body.appendChild(renderer.view);
 
@@ -33,7 +34,7 @@ let oldTime: number = Date.now();
 let ms: number = 1000;
 let fps: number = GAMES.FPS;
 let animate = () => {
-  console.log("animate()");
+  // console.log("animate()");
   let newTime: number = Date.now();
   let deltaTime: number = newTime - oldTime;
   oldTime = newTime;
@@ -126,7 +127,8 @@ loader.load((loader: PIXI.Loader, resources: any) => {
   let offset: number = 10;
 
   // text version
-  let version: string = "PixiJS: 5.3.3\nwebpack: 4.44.0\nTypeScript: 4.0.2";
+  // let version: string = "PixiJS: 5.3.3\nwebpack: 4.44.0\nTypeScript: 4.0.2";
+  let version: string = `PixiJS: ver.${PIXI.VERSION}`;
   text_libVersion = setText(version, "Arial", 16, 0xf0fff0, "left", "normal");
   container.addChild(text_libVersion);
   text_libVersion.x = offset;
@@ -231,9 +233,9 @@ let makeParticle = (
   minRotationSpeed: number = 0.02,
   maxRotationSpeed: number = 0.05
 ) => {
-  console.log("makeParticle()");
+  // console.log("makeParticle()");
   if (!particlesEmitflag) {
-    console.log("it is being generated ...");
+    // console.log("it is being generated ...");
     return;
   }
   particlesEmitflag = false;
@@ -275,7 +277,7 @@ let makeParticle = (
     minScaleSpeed: number,
     maxScaleSpeed: number
   ) => {
-    console.log("make()");
+    // console.log("make()");
     if (numberOfParticles <= particles.length) return;
 
     // set sprite
@@ -302,8 +304,8 @@ let makeParticle = (
     pAryLifetimeSpeed[idx] = randomInt(0.1, 0.5);
 
     particles.push(particle);
-    console.log("particle: ", particle);
-    console.log("particles.length: ", particles.length);
+    // console.log("particle: ", particle);
+    // console.log("particles.length: ", particles.length);
   };
 
   // create particles for each angle
@@ -313,7 +315,7 @@ let makeParticle = (
 };
 
 let removeParticle = (...spritesToRemove: Array<PIXI.Sprite> | any) => {
-  console.log("removeParticle()");
+  // console.log("removeParticle()");
   spritesToRemove.map((elm: PIXI.Sprite) => {
     removeChild(elm);
   });
@@ -324,15 +326,15 @@ let removeParticle = (...spritesToRemove: Array<PIXI.Sprite> | any) => {
  * @param sprite
  */
 let removeChild = (sprite: PIXI.Sprite | any) => {
-  console.log("removeChild()");
+  // console.log("removeChild()");
   if (sprite !== null) {
     particles.splice(sprite);
-    console.log("remove end, particles.length: ", particles.length);
+    // console.log("remove end, particles.length: ", particles.length);
     if (particles.length <= 0) {
       container_effect.destroy({
         children: true,
         texture: false,
-        baseTexture: false
+        baseTexture: false,
       });
       stage.removeChild(container_effect);
       particlesEmitflag = true;
@@ -346,8 +348,10 @@ let removeChild = (sprite: PIXI.Sprite | any) => {
  */
 let updateParticle = () => {
   particles
-    .filter((elem: PIXI.Sprite) => elem !== undefined)
-    .map((p: PIXI.Sprite, idx: number) => {
+    //.filter((elem: PIXI.Sprite) => elem !== undefined)
+    .map((p, idx: number) => {
+      //console.log(p); // Sprite {_events: Events, _eventsCount: 0, tempDisplayObjectParent: null, transform: Transform, alpha: 1, …}
+
       // calculate movement
       pAryVx[idx] += pAryGravity[idx];
       p.x += pAryVx[idx];

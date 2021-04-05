@@ -1,2 +1,1 @@
-npm run build
-pause
+cmd /k npm run build
