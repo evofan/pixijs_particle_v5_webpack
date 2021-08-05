@@ -92,3 +92,48 @@ uninstall package-lock.json
 >最後のコマンドの前に  
 `cmd /k`
 >をつける。  
+
+**npmてインストールされているパッケーシを、npm-check-updatesでまとめてアッフデートする方法 - NxWorld**  
+[https://www.nxworld.net/npm-check-updates.html](https://www.nxworld.net/npm-check-updates.html)  
+>特定のパッケージを除外  
+`ncu -u -x xxx`
+
+Pixi.jsのみアップデートしたくない場合
+```
+-----------------------------------------------------------  
+[====================] 21/21 100%
+Checking C:\Users\user\Documents\pixijs_particle_v5_webpack\package.json
+ @babel/core          ^7.14.3  →  ^7.15.0
+ @babel/preset-env    ^7.14.4  →  ^7.15.0
+ copy-webpack-plugin   ^8.1.1  →   ^9.0.1
+ html-webpack-plugin   ^5.3.1  →   ^5.3.2
+ npm-check-updates    ^11.6.0  →  ^11.8.3
+ pixi.js               ^5.3.9  →   ^6.1.0
+ source-map-loader     ^1.1.3  →   ^3.0.0
+ ts-loader             ^8.3.0  →   ^9.2.5
+ typescript            ^4.3.2  →   ^4.3.5
+ webpack              ^5.38.1  →  ^5.48.0
+ webpack-cli           ^4.7.0  →   ^4.7.2
+ ws                    ^7.4.6  →   ^8.0.0
+
+Run ncu -u to upgrade package.json
+
+C:\Users\user\Documents\pixijs_particle_v5_webpack>ncu -u -x pixi.js
+Upgrading C:\Users\user\Documents\pixijs_particle_v5_webpack\package.json
+[====================] 20/20 100%
+
+ @babel/core          ^7.14.3  →  ^7.15.0
+ @babel/preset-env    ^7.14.4  →  ^7.15.0
+ copy-webpack-plugin   ^8.1.1  →   ^9.0.1
+ html-webpack-plugin   ^5.3.1  →   ^5.3.2
+ npm-check-updates    ^11.6.0  →  ^11.8.3
+ source-map-loader     ^1.1.3  →   ^3.0.0
+ ts-loader             ^8.3.0  →   ^9.2.5
+ typescript            ^4.3.2  →   ^4.3.5
+ webpack              ^5.38.1  →  ^5.48.0
+ webpack-cli           ^4.7.0  →   ^4.7.2
+ ws                    ^7.4.6  →   ^8.0.0
+
+Run npm install to install new versions.
+-----------------------------------------------------------
+```
