@@ -12,7 +12,8 @@ module.exports = {
 
   // Launch local development environment, browser automatically opens localhost at runtime
   devServer: {
-    contentBase: "dist",
+    // contentBase: "dist",
+    static: "dist",
     open: true
   },
 
@@ -42,10 +43,10 @@ module.exports = {
     extensions: [".ts", ".js"]
   },
 
-  devServer: {
+  // devServer: {
     // public folder of webpack-dev-server
-    contentBase: path.join(__dirname, "dist")
-  },
+    // contentBase: path.join(__dirname, "dist")
+  // },
 
   // Set rules to be applied to the module (here we often set the loader)
   module: {
