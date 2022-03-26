@@ -21,7 +21,7 @@
     "copy-webpack-plugin": "^10.2.4",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "node-forge": "^1.2.1",
+    "node-forge": "^1.3.0",
     "npm-check-updates": "^12.3.0",
     "pixi.js": "^5.3.9",
     "set-value": "^4.1.0",
